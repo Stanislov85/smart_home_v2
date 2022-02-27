@@ -1,0 +1,45 @@
+# примеры API-запросов
+
+
+# получение датчиков
+#GET http://localhost:8000/api/v1/sensor/
+#Content-Type: application/json
+GET http://localhost:8000/api/sensors/
+Accept: application/json
+
+###
+
+# создание датчика
+POST http://localhost:8000/api/sensors/
+Content-Type: application/json
+
+{
+  "name": "ESP37",
+  "description": "Датчик на кухне за дома"
+}
+
+###
+
+# обновление датчика
+PATCH http://localhost:8000/api/sensors/3/
+Content-Type: application/json
+
+{
+  "description": "Перенес датчик на кухe"
+}
+
+###
+# добавление измерения
+POST http://localhost:8000/api/measurement/
+Content-Type: application/json
+
+{
+  "sensor": 3,
+  "value": 22.3
+}
+
+###
+
+# получение информации по датчику
+GET http://localhost:8000/api/sensors/2/
+Content-Type: application/json
